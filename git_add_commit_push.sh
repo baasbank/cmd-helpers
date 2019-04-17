@@ -8,12 +8,10 @@ git_add () {
 }
 
 git_commit () {
-  echo "$commitmessage"
   if [ -z "$commitmessage" ] 
   then 
     echo "Please add a commit message"
     read -p 'Commit Message: ' commessage
-    echo $commessage
     git commit -m $commessage
   else
     git commit -m "$commitmessage"
