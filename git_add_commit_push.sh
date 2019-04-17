@@ -8,34 +8,37 @@ git_add () {
 }
 
 git_commit () {
-  if [ -n "$1" ] 
+  if [ -n "$commitmessage" ] 
   then 
     echo "Please add a commit message"
-    read -p 'Commit Message: ' commit_message
-    git commit -m "$commit_message"
+    read -p 'Commit Message: ' commitmessage
+    echo 
+    git commit -m "$commitmessage"
   fi
-  git commit -m "$commitmessage"
+  
 }
 
 git_push () {
-  if [ -n "$2" ]
+  if [ -n "$pushbranch" ]
   then 
     echo "No branch entered. Push to master?"
-    read -p 'y/n: ' push_branch
-    if [ $push_branch = "y"]; then
+    read -p 'y/n: ' pushbranch
+    if [ $pushbranch = "y"]; then
       git push origin master
+      exit 0
     else
       "No branch entered. Exiting..."
       exit 1
-    fi 
+    fi
+  else
+    git push origin "$2"
   fi
-  git push origin "$2"
 }
 
 main () {
   git_add
   git_commit
-  #git_push
+  git_push
 }
 
 main
