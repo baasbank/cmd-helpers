@@ -11,20 +11,22 @@ git_commit () {
   if [ -n "$commitmessage" ] 
   then 
     echo "Please add a commit message"
-    read -p 'Commit Message: ' commitmessage
-    echo 
-    git commit -m "$commitmessage"
+    read -p 'Commit Message: ' commessage
+    echo "$commessage"
+    git commit -m "$commessage"
+  else
+    git commit "$commitmessage"
   fi
-  
 }
 
 git_push () {
   if [ -n "$pushbranch" ]
   then 
     echo "No branch entered. Push to master?"
-    read -p 'y/n: ' pushbranch
-    if [ $pushbranch = "y"]; then
-      git push origin master
+    read -p 'y/n: ' branch
+    if [ $branch = "y"]; then
+      git push -u origin master
+      echo "Push successful. Exiting..."
       exit 0
     else
       "No branch entered. Exiting..."
