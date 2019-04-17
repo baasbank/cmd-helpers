@@ -11,7 +11,7 @@ git_commit () {
     read -p 'Commit Message: ' commit_message
     git commit -m "$commit_message"
   fi
-  git commit -m "$1"
+  git commit -m \""$1"\"
 }
 
 git_push () {
