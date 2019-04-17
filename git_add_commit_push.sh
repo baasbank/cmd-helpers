@@ -23,7 +23,7 @@ git_push () {
   then 
     echo "No branch entered. Push to master?"
     read -p 'y/n: ' branch
-    if [ $branch == 'y']; then
+    if [ $branch = 'y']; then
       git push -u origin master
       echo "Push successful. Exiting..."
       exit 0
