@@ -32,7 +32,7 @@ git_push () {
       exit 1
     fi
   else
-    git push origin $pushbranch
+    git push origin "$pushbranch"
   fi
 }
 
