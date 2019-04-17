@@ -12,7 +12,7 @@ git_commit () {
   then 
     echo "Please add a commit message"
     read -p 'Commit Message: ' commessage
-    git commit -m $commessage
+    git commit -m "$commessage"
   else
     git commit -m "$commitmessage"
   fi
