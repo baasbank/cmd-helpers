@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "$1"
+echo "$2"
+
 git_add () { 
   git add -A
 }
