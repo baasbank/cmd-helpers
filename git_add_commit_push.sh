@@ -1,30 +1,31 @@
 #!/bin/bash
 
-commitmessage="$1"
-pushbranch="$2"
+commitmessage=$1
+pushbranch=$2
 
 git_add () { 
   git add -A
 }
 
 git_commit () {
-  if [ -n "$commitmessage" ] 
+  echo "$commitmessage"
+  if [ -z "$commitmessage" ] 
   then 
     echo "Please add a commit message"
     read -p 'Commit Message: ' commessage
-    echo "$commessage"
-    git commit -m "$commessage"
+    echo $commessage
+    git commit -m $commessage
   else
-    git commit "$commitmessage"
+    git commit -m "$commitmessage"
   fi
 }
 
 git_push () {
-  if [ -n "$pushbranch" ]
+  if [ -z $pushbranch ]
   then 
     echo "No branch entered. Push to master?"
     read -p 'y/n: ' branch
-    if [ $branch == "y"]; then
+    if [ $branch == 'y']; then
       git push -u origin master
       echo "Push successful. Exiting..."
       exit 0
@@ -33,7 +34,7 @@ git_push () {
       exit 1
     fi
   else
-    git push origin "$2"
+    git push origin $pushbranch
   fi
 }
 
