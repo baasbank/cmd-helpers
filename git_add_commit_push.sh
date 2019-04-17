@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "$1"
-echo "$2"
+commitmessage="$1"
+pushbranch="$2"
 
 git_add () { 
   git add -A
@@ -14,7 +14,7 @@ git_commit () {
     read -p 'Commit Message: ' commit_message
     git commit -m "$commit_message"
   fi
-  git commit -m \""$1"\"
+  git commit -m "$commitmessage"
 }
 
 git_push () {
