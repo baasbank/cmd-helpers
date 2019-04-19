@@ -4,9 +4,9 @@ commitmessage=$1
 pushbranch=$2
 
 
-#commit 1 test
+#commit 1 testing
 #commit 2 testing
-#commit 3
+#commit 3 testing
 
 git_add () { 
   git add -A
