@@ -5,7 +5,7 @@ pushbranch=$2
 
 
 #commit 1 test
-#commit 2
+#commit 2 testing
 #commit 3
 
 git_add () { 
