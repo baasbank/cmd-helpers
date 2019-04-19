@@ -4,7 +4,7 @@ commitmessage=$1
 pushbranch=$2
 
 
-#commit 1.1.2
+#commit 1 test
 #commit 2
 #commit 3
 
