@@ -3,14 +3,10 @@
 commitmessage=$1
 pushbranch=$2
 
-# comment 1
 
-#comment 2
-
-# comment 3
-
-# comment 2.1.1
-
+#commit 1.1.2
+#commit 2
+#commit 3
 
 git_add () { 
   git add -A
